@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>API Test Page</h1>
+    <button onclick="testAPI()">Test API</button>
+    <pre id="result">Click the button to test the API</pre>
+    
+    <script>
+        async function testAPI() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = 'Loading...';
+            
+            try {
+                // Test 1: Relative URL (should use Vite proxy)
+                console.log('Testing relative URL: /api/dashboard');
+                const response1 = await axios.get('/api/dashboard');
+                console.log('Response 1:', response1);
+                resultDiv.textContent = 'SUCCESS!\n\n' + JSON.stringify(response1.data, null, 2);
+            } catch (error) {
+                console.error('Error:', error);
+                resultDiv.textContent = 'ERROR:\n' + error.message + '\n\n' + 
+                    'Response: ' + (error.response ? JSON.stringify(error.response.data) : 'No response') + '\n\n' +
+                    'Full error: ' + JSON.stringify(error, null, 2);
+            }
+        }
+        
+        // Auto-test on page load
+        window.onload = function() {
+            console.log('Page loaded, testing API...');
+            testAPI();
+        };
+    </script>
+</body>
+</html>
+
+

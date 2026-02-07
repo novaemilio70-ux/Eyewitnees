@@ -1,0 +1,62 @@
+{
+  "version": "2.1",
+  "signatures": [
+    {
+      "id": "ricoh_wim_001",
+      "application_name": "Ricoh Web Image Monitor",
+      "signature_patterns": [
+        "Web Image Monitor",
+        "<title>RNP",
+        "mainFrame.cgi"
+      ],
+      "category": "printer",
+      "credentials": [
+        {
+          "username": "admin",
+          "password": "",
+          "source": "documented",
+          "description": "Default admin with blank password"
+        },
+        {
+          "username": "supervisor",
+          "password": "",
+          "source": "documented",
+          "description": "Supervisor with blank password"
+        },
+        {
+          "username": "admin",
+          "password": "admin",
+          "source": "common",
+          "description": "Common admin credentials"
+        }
+      ],
+      "metadata": {
+        "created_at": "2026-01-08T10:00:00",
+        "updated_at": "2026-01-08T10:00:00",
+        "discovered_by": "manual",
+        "notes": "Ricoh printers use Web Image Monitor interface. RNP prefix in title indicates Ricoh Network Printer.",
+        "login_url_pattern": "/web/guest/es/websys/webArch/authForm.cgi"
+      }
+    },
+    {
+      "id": "4eed58d34dcb",
+      "application_name": "RNP583879B5A8FF",
+      "signature_patterns": [
+        "<title>RNP583879B5A8FF"
+      ],
+      "category": "printer",
+      "credentials": [
+        {
+          "username": "admin",
+          "password": "",
+          "source": "documented"
+        }
+      ],
+      "metadata": {
+        "created_at": "2026-01-08T21:12:41.367214",
+        "updated_at": "2026-01-08T21:12:41.367223",
+        "discovered_by": "manual"
+      }
+    }
+  ]
+}
